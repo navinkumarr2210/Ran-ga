@@ -1,0 +1,4 @@
+const field=document.querySelector('.star-field');
+if(field){for(let i=0;i<26;i++){const s=document.createElement('i');s.className='star';s.style.left=(Math.random()*100)+'%';s.style.animationDuration=(4+Math.random()*6)+'s';s.style.animationDelay=(-Math.random()*8)+'s';s.style.setProperty('--trail',(35+Math.random()*85)+'px');const size=1.5+Math.random()*2.5;s.style.width=size+'px';s.style.height=size+'px';field.appendChild(s)}}
+const system=document.querySelector('.system');
+if(system){system.addEventListener('mousemove',e=>{const r=system.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;const core=system.querySelector('.core');core.style.transform=`translate(-50%,-50%) translateZ(20px) rotateX(${-y*5}deg) rotateY(${x*5}deg)`});system.addEventListener('mouseleave',()=>{system.querySelector('.core').style.transform='translate(-50%,-50%) translateZ(20px)'})}
